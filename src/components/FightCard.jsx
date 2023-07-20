@@ -17,12 +17,17 @@ export default function FightCard({ style, hero }) {
           />
         )}
       </div>
-      {/* <p>{hero.appearance.gender}</p> */}
-      <p>{hero.name}</p>
-      <p>{hero.name}</p>
-      <p>{hero.name}</p>
-      <p>{hero.name}</p>
-      <p>{hero.name}</p>
+      <p>Gender: {hero.appearance ? hero.appearance.gender : "Loading"}</p>
+      <p>
+        Race:{" "}
+        {hero.appearance
+          ? hero.appearance.race === "null"
+            ? "N/A"
+            : hero.appearance.race
+          : null}
+      </p>
+      <p>Height: {hero.appearance ? hero.appearance.height[1] : null}</p>
+      <p>Weight: {hero.appearance ? hero.appearance.weight[1] : null}</p>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import FightCard from "../../components/FightCard";
+import vsImage from "../../assets/vs.png";
 
 export default function Home() {
   const [superHeroLeftData, setsuperHeroLeftData] = useState({});
@@ -47,18 +48,12 @@ export default function Home() {
   return (
     <div className="main-container">
       <div className="second-container">
-        <FightCard style={{ marginRight: "10%" }} hero={superHeroLeftData} />
-        <FightCard hero={superHeroRightData} />
-        {console.log(superHeroRightData)}
-        {/* <div>{superHeroLeftData.name}</div>
-        <div>{superHeroRightData.name}</div> */}
-        {/* <button onClick={() => grabHeroLeftData(import.meta.env.VITE_API_KEY)}>
-          Randomise
-        </button>
-        <button onClick={() => grabHeroRightData(import.meta.env.VITE_API_KEY)}>
-          Randomise
-        </button>
-        <button onClick={() => simulateFight()}>Fight</button> */}
+        <div className="cards-container">
+          <FightCard style={{ marginRight: "10%" }} hero={superHeroLeftData} />
+
+          <FightCard hero={superHeroRightData} />
+        </div>
+        <button onClick={() => simulateFight()}>Fight</button>
       </div>
     </div>
   );
